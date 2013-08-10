@@ -1,0 +1,6 @@
+{
+  "name": "tissue",
+  "dependencies": {
+    "blueimp-md5": "https://github.com/blueimp/JavaScript-MD5.git#~1.0.2"
+  }
+}

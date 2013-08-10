@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "belt-flash": {}
+    },
+    "packages": {
+      "belt-flash": {
+        "git": "https://github.com/meteorbelt/belt-flash.git",
+        "tag": "v0.1.0",
+        "commit": "6300bc8df4021b1b8f8f3ad1516de24280f727b6"
+      }
+    }
+  }
+}
