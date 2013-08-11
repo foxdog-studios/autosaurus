@@ -3,7 +3,7 @@
 set -o errexit
 set -o nounset
 
-cd ../autosaur
+cd ../autosaurus
 
 if [[ "${#}" == 0 ]]; then
     args=run
