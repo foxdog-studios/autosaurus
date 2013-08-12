@@ -2,6 +2,9 @@
 
 Automatically generate dinosaur images.
 
+"You crazy son of a bitch, you did it!",
+[try the demo](http://foxdog-studios.github.io/autosaurus/)
+
 Given input text Renders an image of a dinosaur to an html `canvas` element.
 
 The dinosaur is generated using the md5 hash of the input text.
