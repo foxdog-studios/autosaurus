@@ -1,2 +1,4 @@
-/autosaur/client/lib/external/
 /bower_components/
+/node_modules/
+
+/build/md5.js

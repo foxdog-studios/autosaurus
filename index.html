@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta http-equiv="Content-Language" Content="en">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Autosaurus - automatically generate dinosaur images</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <script src="build/md5.js"></script>
+  <script src="build/autosaurus.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <div id="body" class="container-fluid">
+      <div id="main" class="row-fluid">
+        <div>
+          <canvas id="autosaurus">
+          </canvas>
+        </div>
+        <div>
+          <input onkeyup="updateAutosaurus(this, event)" id="text-input" name="text" type="text" placeholder="Enter anything" value=""></input>
+        </div>
+      </div>
+    </div>
+    <footer class="text-center muted"><a href="http://foxdogstudios.com">Foxdog Studios</a> made this</footer>
+  </div>
+  <script>
+    var autosaurus = new Autosaurus()
+    var canvas = document.getElementById('autosaurus');
+    updateAutosaurus = function(textInput, event) {
+      event.preventDefault();
+      var text = textInput.value;
+      autosaurus.draw(canvas, text);
+    }
+  </script>
+</body>
+</html>

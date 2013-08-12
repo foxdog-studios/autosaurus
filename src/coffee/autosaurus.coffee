@@ -151,7 +151,7 @@ BRACHIOSAURUS = [
 ]
 
 
-@Autosaur = class Autosaur
+@Autosaurus = class Autosaurus
   constructor: (canvas) ->
 
   draw: (canvas, text) ->
