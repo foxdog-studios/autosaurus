@@ -21,19 +21,22 @@
     function Autosaurus(canvas) {}
 
     Autosaurus.prototype.draw = function(canvas, text) {
-      var color, context, dinoHex, hash, image;
+      var color, context, dinoHex, hash, height, image, width;
       context = canvas.getContext('2d');
+      width = canvas.width;
+      height = canvas.height;
+      console.log(height);
       hash = md5(text);
       color = "#" + hash.slice(-6);
       context.fillStyle = color;
-      context.fillRect(0, 0, 128, 128);
+      context.fillRect(0, 0, width, height);
       context.fillStyle = "#" + hash.slice(-12, -6);
       dinoHex = parseInt(hash[13], 16);
       image = this._getDinoImageFromHex(dinoHex);
-      return this._drawDinosaur(context, image, 8);
+      return this._drawDinosaur(context, image, Math.floor(width / 16), Math.floor(height / 16));
     };
 
-    Autosaurus.prototype._drawDinosaur = function(context, arraryImage, scale) {
+    Autosaurus.prototype._drawDinosaur = function(context, arraryImage, xScale, yScale) {
       var i, j, line, pixel, _i, _len, _results;
       _results = [];
       for (i = _i = 0, _len = arraryImage.length; _i < _len; i = ++_i) {
@@ -44,7 +47,7 @@
           for (j = _j = 0, _len1 = line.length; _j < _len1; j = ++_j) {
             pixel = line[j];
             if (pixel === '#') {
-              _results1.push(context.fillRect(j * scale, i * scale, 1 * scale, 1 * scale));
+              _results1.push(context.fillRect(j * xScale, i * yScale, 1 * xScale, 1 * yScale));
             } else {
               _results1.push(void 0);
             }

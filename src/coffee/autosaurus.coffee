@@ -156,20 +156,27 @@ BRACHIOSAURUS = [
 
   draw: (canvas, text) ->
     context = canvas.getContext '2d'
+    width = canvas.width
+    height = canvas.height
+    console.log height
     hash = md5(text)
     color = "##{hash[-6..-1]}"
     context.fillStyle = color
-    context.fillRect(0, 0, 128, 128)
+    context.fillRect(0, 0, width, height)
     context.fillStyle = "##{hash[-12..-7]}"
     dinoHex = parseInt(hash[13], 16)
     image = @_getDinoImageFromHex(dinoHex)
-    @_drawDinosaur(context, image, 8)
+    @_drawDinosaur \
+      context, \
+      image, \
+      Math.floor(width / 16), \
+      Math.floor(height / 16)
 
-  _drawDinosaur: (context, arraryImage, scale) ->
+  _drawDinosaur: (context, arraryImage, xScale, yScale) ->
     for line, i in arraryImage
       for pixel, j in line
         if pixel == '#'
-          context.fillRect(j * scale, i * scale, 1 * scale, 1 * scale)
+          context.fillRect(j * xScale, i * yScale, 1 * xScale, 1 * yScale)
 
   _getDinoImageFromHex: (dinoHex) ->
     if dinoHex < 2
