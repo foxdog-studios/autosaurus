@@ -158,7 +158,6 @@ BRACHIOSAURUS = [
     context = canvas.getContext '2d'
     width = canvas.width
     height = canvas.height
-    console.log height
     hash = md5(text)
     color = "##{hash[-6..-1]}"
     context.fillStyle = color
